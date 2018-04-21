@@ -1,8 +1,9 @@
 # Tensorflow Serving Exporter
+[![Build Status](https://travis-ci.org/ynqa/tf_serving_exporter.svg?branch=master)](https://travis-ci.org/ynqa/tf_serving_exporter)
 
 Prometheus exporter for [Tensorflow Serving](https://github.com/tensorflow/serving) metrics.
 
-# Building and running
+## Building and running
 
 Build binary
 
@@ -14,7 +15,7 @@ $ ./bazel-bin/tf_serving_exporter
 
 For the config to run prometheus also, please refer to [example/prometeus.yml]( example/prometeus.yml).
 
-# Usage
+## Usage
 
 ```
 usage: tf_serving_exporter.py [-h] [--port PORT] [--tf_host TF_HOST]
@@ -36,13 +37,13 @@ optional arguments:
                         log level (default: INFO)
 ```
 
-# Metrics
+## Metrics
 
 |name|description|
 |:--|:--|
 |tf_serving_model_state|State of model name given|
 
-## Metrics example
+### Metrics example
 
 ```
 # HELP tf_serving_model_state model state on tf_serving
