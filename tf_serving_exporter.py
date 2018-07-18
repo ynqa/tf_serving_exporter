@@ -2,13 +2,13 @@ import argparse
 import time
 import logging
 
-from grpc.beta import implementations
+import grpc
 from grpc.framework.interfaces.face.face import AbortionError, ExpirationError
 
 from prometheus_client import start_http_server, REGISTRY
 from prometheus_client.core import GaugeMetricFamily
 
-from tensorflow_serving.apis import get_model_status_pb2, model_service_pb2
+from tensorflow_serving.apis import get_model_status_pb2, model_service_pb2_grpc
 
 
 def model_available(state):
@@ -71,8 +71,8 @@ def main(args):
         format='[%(asctime)s] %(levelname)s %(message)s', level=args.log_level)
 
     # create channel and stub
-    channel = implementations.insecure_channel(args.tf_host, args.tf_port)
-    stub = model_service_pb2.beta_create_ModelService_stub(channel)
+    channel = grpc.insecure_channel('{}:{}'.format(args.tf_host, args.tf_port))
+    stub = model_service_pb2_grpc.ModelServiceStub(channel)
 
     # register tf_serving exporter
     REGISTRY.register(TFServingExporter(stub, args.model_name, args.timeout))

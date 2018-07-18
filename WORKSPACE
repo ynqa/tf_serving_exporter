@@ -1,6 +1,6 @@
 workspace(name = "tf_serving_exporter")
 
-tensorflow_serving_version = "b727a2c3f3cdd06c0fe05f14e2dae3870db99dba"
+tensorflow_serving_version = "0d219b72c01d45af8c5d8079950b09df839d9e15"
 rules_docker_version = "0.4.0"
 rules_python_version = "115e3a0dab4291184fdcb0d4e564a0328364571a"
 
@@ -39,7 +39,7 @@ pip_install()
 # Tensorflow serving.
 http_archive(
     name = "tf_serving",
-    sha256 = "2b562c1e79dc9ab609d4e66a9264e7d4ff68a0ce41dd66ca9b6d3882858bc64f",
+    sha256 = "9891a4567401e16e691628c2f6199f9c69fc77a71d565aad62e04bbc1d972182",
     strip_prefix = "serving-%s" % tensorflow_serving_version,
     url = "https://github.com/tensorflow/serving/archive/%s.tar.gz" % tensorflow_serving_version,
 )
