@@ -1,2 +1,2 @@
-grpcio
-prometheus_client
+grpcio==1.9.1
+prometheus_client==0.3.0
