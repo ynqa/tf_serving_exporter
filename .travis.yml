@@ -6,12 +6,7 @@ python:
 services:
   - docker
 
-before_install:
-  # install bazel
-  - wget https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-without-jdk-installer-linux-x86_64.sh
-  - sudo chmod +x bazel-${BAZEL_VERSION}-without-jdk-installer-linux-x86_64.sh
-  - ./bazel-${BAZEL_VERSION}-without-jdk-installer-linux-x86_64.sh --user
-  - export PATH="$PATH:$HOME/bin"
+script: true
 
 deploy:
   provider: script
