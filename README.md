@@ -3,14 +3,12 @@
 
 Prometheus exporter for [Tensorflow Serving](https://github.com/tensorflow/serving) metrics.
 
-## Building and running
-
-Build binary
+## Running
 
 ```
 $ git clone https://github.com/ynqa/tf_serving_exporter.git
-$ bazel build //:tf_serving_exporter
-$ ./bazel-bin/tf_serving_exporter
+$ pip install -r requirements.txt
+$ python tf_serving_exporter.py
 ```
 
 For the config to run prometheus also, please refer to [example/prometeus.yml]( example/prometeus.yml).
