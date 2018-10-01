@@ -6,6 +6,13 @@ python:
 services:
   - docker
 
+install:
+  - pip install -r requirements.txt
+  - pip install -r requirements.dev.txt
+
+script:
+  - PYTHONPATH=. pytest tests -v
+
 deploy:
   provider: script
   script: bash docker_push.sh

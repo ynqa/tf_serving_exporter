@@ -3,3 +3,5 @@
 bazel-*
 vendor/
 data/
+.cache/
+__pycache__/
