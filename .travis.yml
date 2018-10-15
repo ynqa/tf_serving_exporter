@@ -12,9 +12,9 @@ install:
 
 script:
   - PYTHONPATH=. pytest tests -v
-
-deploy:
-  provider: script
-  script: bash docker_push.sh
-  on:
-    branch: master
+after_success: |
+  if [ "$TRAVIS_BRANCH" == "master" ]; then
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    docker build -t ynqa/tensorflow-serving-exporter:latest .
+    docker push ynqa/tensorflow-serving-exporter:latest
+  fi
