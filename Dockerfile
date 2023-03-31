@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:1.11.0
+FROM python:3.10.10
 
 WORKDIR /app
 COPY requirements.txt /app/requirements.txt
