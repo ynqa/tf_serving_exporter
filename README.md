@@ -1,5 +1,4 @@
 # Tensorflow Serving Exporter
-[![Build Status](https://travis-ci.org/ynqa/tf_serving_exporter.svg?branch=master)](https://travis-ci.org/ynqa/tf_serving_exporter)
 
 Prometheus exporter for [Tensorflow Serving](https://github.com/tensorflow/serving) metrics.
 
