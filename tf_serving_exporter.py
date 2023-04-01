@@ -52,7 +52,7 @@ class TFServingExporter(object):
             except Exception as e:
                 logging.exception(
                     'Exeption on GetModelStatus of {}: {}'.format(
-                        n, e.message))
+                        n, e))
             else:
                 # success to connect to serving
                 for model in model_version_status:
